@@ -1,0 +1,589 @@
+{% extends 'extends.html' %}
+{% block css %}
+    <link rel="stylesheet" href="../static/profile/style/style.min.css">
+    <style>
+        .divchade {
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.07);
+            color: white;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+        }
+
+        .divchade:hover {
+            opacity: 1;
+        }
+
+        .divchade2 {
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.07);
+            color: white;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+        }
+
+        .divchade2:hover {
+            opacity: 1;
+            display: flex;
+        }
+
+        .divchade3 {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.07);
+            color: white;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+        }
+
+        .divchade3:hover {
+            opacity: 1;
+            display: flex;
+        }
+    </style>
+    {% if user.username ==username %}
+        <style>
+            .section_top_right_top_buttons_button2 {
+                opacity: 0;
+                display: none;
+            }
+
+            .section_top_right_top_buttons_button {
+                opacity: 0;
+                display: none;
+            }
+
+            .inputaa {
+                display: flex;
+                opacity: 1;
+                text-decoration: none;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                border-radius: 6px;
+                background: white;
+                color: black;
+                margin-left: 10px;
+                width: 180.93px;
+                height: 32px;
+                font-weight: 480;
+                font-size: 17px;
+            }
+        </style>
+    {% endif %}
+    <style>
+        .section_top_right_top_buttons_button2 {
+            display: flex;
+            opacity: 1;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            border-radius: 6px;
+            background: white;
+            color: black;
+            margin-left: 10px;
+            width: 100.93px;
+            height: 32px;
+            font-weight: 480;
+            font-size: 17px;
+        }
+    </style>
+    {% if curent %}
+
+        <style>
+            .section_top_right_top_buttons_button2 {
+                display: none;
+                opacity: 0;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                border-radius: 6px;
+                background: white;
+                color: black;
+                width: 117.93px;
+                height: 32px;
+                font-weight: 480;
+                font-size: 17px;
+            }
+
+            .section_top_right_top_buttons_button {
+                display: flex;
+                opacity: 1;
+
+            }
+        </style>
+    {% endif %}
+{% endblock %}
+{% block content %}
+    <div class="section">
+        <div class="section_top">
+            <div class="section_top_left">
+                <div class="section_top_left_icon" style="background: url({{ filter.photo }}); background-size: cover;">
+
+                </div>
+            </div>
+            <div class="section_top_right">
+                <div class="section_top_right_top">
+                    <div class="section_top_right_top_nik">
+                        {{ username }}
+                    </div>
+                    <div class="section_top_right_top_buttons">
+                        {% if user.username == username %}
+                            <a href="{{ url_for('edit') }}" class="inputaa">Edit profile</a>
+                        {% endif %}
+                        {% if curent %}
+                            <form action="{{ url_for('unfollow',username=username) }}" method="post">
+                                <button class="section_top_right_top_buttons_button" style="display: flex;opacity: 1;">
+                                    Following
+
+                                </button>
+                            </form>
+                        {% endif %}
+                        <form action="{{ url_for('follow',username=username) }}" method="post">
+
+                            <button class="section_top_right_top_buttons_button2"
+                                    style="background: #0095f6; color: white;">Follow
+
+                            </button>
+                        </form>
+                        <button class="section_top_right_top_buttons_button" style="width: 87.65px;">Message</button>
+                        <button class="section_top_right_top_buttons_button" style="width: 34px;">
+                            <svg aria-label="Similar accounts" class="x1lliihq x1n2onr6" color="rgb(0, 0, 0)"
+                                 fill="rgb(0, 0, 0)" height="16" role="img" viewBox="0 0 24 24" width="16"><title>
+                                Similar accounts</title>
+                                <path d="M19.006 8.252a3.5 3.5 0 1 1-3.499-3.5 3.5 3.5 0 0 1 3.5 3.5Z" fill="none"
+                                      stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path>
+                                <path d="M22 19.5v-.447a4.05 4.05 0 0 0-4.05-4.049h-4.906a4.05 4.05 0 0 0-4.049 4.049v.447"
+                                      fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2"></path>
+                                <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10"
+                                      stroke-width="2" x1="5.001" x2="5.001" y1="7.998" y2="14.003"></line>
+                                <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10"
+                                      stroke-width="2" x1="8.004" x2="2.003" y1="11" y2="11"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="section_top_right_top_threedot">
+                        <svg aria-label="Options" class="x1lliihq x1n2onr6" color="rgb(245, 245, 245)"
+                             fill="rgb(245, 245, 245)" height="32" role="img" viewBox="0 0 24 24" width="32"><title>
+                            Options</title>
+                            <circle cx="12" cy="12" r="1.5"></circle>
+                            <circle cx="6" cy="12" r="1.5"></circle>
+                            <circle cx="18" cy="12" r="1.5"></circle>
+                        </svg>
+                    </div>
+                </div>
+                <div class="section_top_right_center">
+                    <div class="section_top_right_center_posts">
+                        <div class="section_top_right_center_span">{{ reel_count }}</div>
+                        posts
+                    </div>
+                    <div class="section_top_right_center_followers">
+                        <div class="section_top_right_center_span">{{ follow }}</div>
+                        followers
+                    </div>
+                    <div class="section_top_right_center_following">
+                        <div class="section_top_right_center_span"> 4</div>
+                        following
+                    </div>
+                </div>
+                <div class="section_top_right_bottom">
+                    <div class="section_top_right_bottom_name">
+                        {{ filter.name }}
+                    </div>
+                    <div class="section_top_right_bottom_type">
+                        Education
+                    </div>
+                    <div class="section_top_right_bottom_bio" style="width: 150px;">
+                        {{ filter.bio }}
+                    </div>
+                    <div class="section_top_right_bottom_link">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section_bottom">
+            <div class="section_bottom_top">
+                <ul class="section_bottom_top_ul">
+                    <li class="section_bottom_top_ul_li" id="left">
+                        <svg aria-label="" class="_ab6-" color="rgb(168, 168, 168)" fill="rgb(168, 168, 168)"
+                             height="12" role="img" viewBox="0 0 24 24" width="12">
+                            <rect fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2" width="18" x="3" y="3"></rect>
+                            <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2" x1="9.015" x2="9.015" y1="3" y2="21"></line>
+                            <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2" x1="14.985" x2="14.985" y1="3" y2="21"></line>
+                            <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2" x1="21" x2="3" y1="9.015" y2="9.015"></line>
+                            <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2" x1="21" x2="3" y1="14.985" y2="14.985"></line>
+                        </svg>
+                        Posts
+                    </li>
+                    <li class="section_bottom_top_ul_li" id="center">
+                        <svg aria-label="" class="_ab6-" color="rgb(245, 245, 245)" fill="rgb(245, 245, 245)"
+                             height="12" role="img" viewBox="0 0 24 24" width="12">
+                            <line fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2" x1="2.049"
+                                  x2="21.95" y1="7.002" y2="7.002"></line>
+                            <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2" x1="13.504" x2="16.362" y1="2.001" y2="7.002"></line>
+                            <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2" x1="7.207" x2="10.002" y1="2.11" y2="7.002"></line>
+                            <path d="M2 12.001v3.449c0 2.849.698 4.006 1.606 4.945.94.908 2.098 1.607 4.946 1.607h6.896c2.848 0 4.006-.699 4.946-1.607.908-.939 1.606-2.096 1.606-4.945V8.552c0-2.848-.698-4.006-1.606-4.945C19.454 2.699 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.546 2 5.704 2 8.552Z"
+                                  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2"></path>
+                            <path d="M9.763 17.664a.908.908 0 0 1-.454-.787V11.63a.909.909 0 0 1 1.364-.788l4.545 2.624a.909.909 0 0 1 0 1.575l-4.545 2.624a.91.91 0 0 1-.91 0Z"
+                                  fill-rule="evenodd"></path>
+                        </svg>
+                        Reels
+                    </li>
+                    <li class="section_bottom_top_ul_li" id="right">
+                        <svg aria-label="" class="_ab6-" color="rgb(245, 245, 245)" fill="rgb(245, 245, 245)"
+                             height="12" role="img" viewBox="0 0 24 24" width="12">
+                            <polygon fill="none" points="20 21 12 13.44 4 21 4 3 20 3 20 21" stroke="currentColor"
+                                     stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon>
+                        </svg>
+                        Saved
+                    </li>
+                    <li class="section_bottom_top_ul_li">
+                        <svg aria-label="" class="_ab6-" color="rgb(168, 168, 168)" fill="rgb(168, 168, 168)"
+                             height="12" role="img" viewBox="0 0 24 24" width="12">
+                            <path d="M10.201 3.797 12 1.997l1.799 1.8a1.59 1.59 0 0 0 1.124.465h5.259A1.818 1.818 0 0 1 22 6.08v14.104a1.818 1.818 0 0 1-1.818 1.818H3.818A1.818 1.818 0 0 1 2 20.184V6.08a1.818 1.818 0 0 1 1.818-1.818h5.26a1.59 1.59 0 0 0 1.123-.465Z"
+                                  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2"></path>
+                            <path d="M18.598 22.002V21.4a3.949 3.949 0 0 0-3.948-3.949H9.495A3.949 3.949 0 0 0 5.546 21.4v.603"
+                                  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2"></path>
+                            <circle cx="12.072" cy="11.075" fill="none" r="3.556" stroke="currentColor"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
+                        </svg>
+                        Tagged
+                    </li>
+                </ul>
+            </div>
+            <div class="madalni">
+                <svg style="position: absolute; right: 50px;top: 20px;" aria-label="Close"
+                     class="x1lliihq close" color="rgb(255, 255, 255)" fill="rgb(255, 255, 255)" height="18"
+                     role="img" viewBox="0 0 24 24" width="18"><title>Close</title>
+                    <polyline fill="none" points="20.643 3.357 12 12 3.353 20.647" stroke="currentColor"
+                              stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></polyline>
+                    <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="3" x1="20.649" x2="3.354" y1="20.649" y2="3.354"></line>
+                </svg>
+                <button style="position: absolute; left: 350px" id="prev" class="section_top_left_top_button buttons">
+                        <span style="background-position: -294px -226px; "
+                              class="section_top_left_top_button_div"></span>
+                </button>
+                <div class="mad">
+                    {% for reel in reels %}
+                        <div class="madd">
+                            <div class="mad1">
+                                <video class="section_top_left_bottom_bottom_video video">
+                                    <source class="section_top_left_bottom_bottom_video_video video"
+                                            src="{{ reel.reel }}" style="object-fit: cover;" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="mad2">
+                                <div class="section_top_left_bottom_top" style="border-bottom: 0.5px solid #737373">
+                                    <div class="section_top_left_bottom_top_left">
+                                        <div class="section_top_left_bottom_top_left_img">
+
+                                        </div>
+                                        <div class="section_top_left_bottom_top_left_name">
+                                            {{ reel.reel_name }}
+                                            <div style="font-size: 15px;">{{ reel.sound }}</div>
+                                        </div>
+                                    </div>
+                                    <div class="section_top_left_bottom_top_right">
+                                        <a style="text-decoration: none;" href="{{ url_for('delete',reel=reel.id) }}">
+                                            <svg fill="red" width="20px" viewBox="0 0 24 24"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                   stroke-linejoin="round"></g>
+                                                <g id="SVGRepo_iconCarrier">
+                                                    <path d="M5.755,20.283,4,8H20L18.245,20.283A2,2,0,0,1,16.265,22H7.735A2,2,0,0,1,5.755,20.283ZM21,4H16V3a1,1,0,0,0-1-1H9A1,1,0,0,0,8,3V4H3A1,1,0,0,0,3,6H21a1,1,0,0,0,0-2Z"></path>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="comment">
+
+                                </div>
+                                <div class="likes">
+                                    <div class="section_top_left_bottom_like">
+                                        <div class="section_top_left_bottom_like_top">
+                                            <ul class="section_top_left_bottom_like_top_ul"
+                                                style="position: absolute;left: 0;">
+                                                {% if reel in user.like %}
+                                                    <a style="text-decoration: none;"
+                                                       href="{{ url_for('dislikeeee',id=reel.id) }}">
+                                                        <li class="section_top_left_bottom_like_top_ul_li">
+                                                            <svg aria-label="Не нравится" class="x1lliihq x1n2onr6"
+                                                                 color="rgb(255, 48, 64)" fill="rgb(255, 48, 64)"
+                                                                 height="24" role="img" viewBox="0 0 48 48"
+                                                                 width="24">
+                                                                <title>Не нравится</title>
+                                                                <path d="M34.6 3.1c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5s1.1-.2 1.6-.5c1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"></path>
+                                                            </svg>
+                                                        </li>
+                                                    </a>
+                                                {% else %}
+                                                    <a style="text-decoration: none;"
+                                                       href="{{ url_for('add_likeeee',id=reel.id) }}">
+                                                        <li class="section_top_left_bottom_like_top_ul_li">
+                                                            <svg aria-label="Like" class="x1lliihq x1n2onr6"
+                                                                 color="rgb(245, 245, 245)"
+                                                                 fill="rgb(245, 245, 245)" height="24" role="img"
+                                                                 viewBox="0 0 24 24"
+                                                                 width="24"><title>Like</title>
+                                                                <path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z"></path>
+                                                            </svg>
+                                                        </li>
+                                                    </a>
+                                                {% endif %}
+                                                <li class="section_top_left_bottom_like_top_ul_li">
+                                                    <svg aria-label="Comment" class="x1lliihq x1n2onr6"
+                                                         color="rgb(245, 245, 245)"
+                                                         fill="rgb(245, 245, 245)" height="24" role="img"
+                                                         viewBox="0 0 24 24"
+                                                         width="24"><title>Comment</title>
+                                                        <path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z"
+                                                              fill="none"
+                                                              stroke="currentColor" stroke-linejoin="round"
+                                                              stroke-width="2"></path>
+                                                    </svg>
+                                                </li>
+                                                <li class="section_top_left_bottom_like_top_ul_li">
+                                                    <svg aria-label="Share Post" class="x1lliihq x1n2onr6"
+                                                         color="rgb(245, 245, 245)" fill="rgb(245, 245, 245)"
+                                                         height="24"
+                                                         role="img"
+                                                         viewBox="0 0 24 24" width="24"><title>Share Post</title>
+                                                        <line fill="none" stroke="currentColor" stroke-linejoin="round"
+                                                              stroke-width="2" x1="22" x2="9.218" y1="3"
+                                                              y2="10.083"></line>
+                                                        <polygon fill="none"
+                                                                 points="11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334"
+                                                                 stroke="currentColor" stroke-linejoin="round"
+                                                                 stroke-width="2"></polygon>
+                                                    </svg>
+                                                </li>
+                                            </ul>
+                                            <ul class="section_top_left_bottom_like_top_ul"
+                                                style="position: absolute; right: -35px;">
+
+
+                                                {% if reel in save %}
+                                                    <a class="a1" style="text-decoration: none"
+                                                       href="{{ url_for('unsavee',id=reel.id) }}">
+                                                        <li class="section_top_left_bottom_like_top_ul_li">
+                                                            <svg aria-label="Удалить" class="x1lliihq x1n2onr6"
+                                                                 color="rgb(245, 245, 245)" fill="rgb(245, 245, 245)"
+                                                                 height="24"
+                                                                 role="img" viewBox="0 0 24 24" width="24"><title>
+                                                                Удалить</title>
+                                                                <path d="M20 22a.999.999 0 0 1-.687-.273L12 14.815l-7.313 6.912A1 1 0 0 1 3 21V3a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1Z"></path>
+                                                            </svg>
+                                                        </li>
+                                                    </a>
+                                                {% else %}
+                                                    <a style="text-decoration: none" class="a2"
+                                                       href="{{ url_for('savee',id=reel.id) }}">
+                                                        <li class="section_top_left_bottom_like_top_ul_li">
+                                                            <svg aria-label="Save" class="x1lliihq x1n2onr6"
+                                                                 color="rgb(245, 245, 245)"
+                                                                 fill="rgb(245, 245, 245)" height="24" role="img"
+                                                                 viewBox="0 0 24 24"
+                                                                 width="24"><title>Save</title>
+                                                                <polygon fill="none"
+                                                                         points="20 21 12 13.44 4 21 4 3 20 3 20 21"
+                                                                         stroke="currentColor" stroke-linecap="round"
+                                                                         stroke-linejoin="round"
+                                                                         stroke-width="2"></polygon>
+                                                            </svg>
+                                                        </li>
+                                                    </a>
+                                                {% endif %}
+
+                                            </ul>
+                                        </div>
+                                        <div class="section_top_left_bottom_like_bottom">
+
+                                        </div>
+                                    </div>
+                                    <div class="section_top_left_bottom_comment_like">8 likes</div>
+                                </div>
+                                <form class="form" action="">
+                                    <svg style="margin-left: 10px;" aria-label="Emoji" class="x1lliihq x1n2onr6"
+                                         color="rgb(245, 245, 245)"
+                                         fill="rgb(245, 245, 245)" height="24" role="img" viewBox="0 0 24 24"
+                                         width="24"><title>Emoji</title>
+                                        <path d="M15.83 10.997a1.167 1.167 0 1 0 1.167 1.167 1.167 1.167 0 0 0-1.167-1.167Zm-6.5 1.167a1.167 1.167 0 1 0-1.166 1.167 1.167 1.167 0 0 0 1.166-1.167Zm5.163 3.24a3.406 3.406 0 0 1-4.982.007 1 1 0 1 0-1.557 1.256 5.397 5.397 0 0 0 8.09 0 1 1 0 0 0-1.55-1.263ZM12 .503a11.5 11.5 0 1 0 11.5 11.5A11.513 11.513 0 0 0 12 .503Zm0 21a9.5 9.5 0 1 1 9.5-9.5 9.51 9.51 0 0 1-9.5 9.5Z"></path>
+                                    </svg>
+                                    <input class="input" type="text"
+                                           placeholder="Add comment">
+                                    <button class="button">Post</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+
+                </div>
+                <button id="next" style="position: absolute; right: 350px;" class="section_top_left_top_button buttons">
+                    <span class="section_top_left_top_button_div"></span>
+                </button>
+            </div>
+            <div class="section_bottom_bottom">
+
+                <div class="section_bottom_bottom_left">
+                    {% for reel in reels %}
+                        <div class="section_bottom_bottom_left_div hoverde"
+                             style="background: transparent; position: relative;">
+                            <div class="divchade">
+                                <div class="like"
+                                     style="display: flex;color: white;justify-content: center; align-items: center;font-size: 15px;margin-right: 20px;">
+                                    {{ reel.like }}
+                                    <svg aria-label="Like" class="x1lliihq x1n2onr6"
+                                         color="rgb(245, 245, 245)"
+                                         fill="rgb(245, 245, 245)" height="24" role="img"
+                                         viewBox="0 0 24 24"
+                                         width="24"><title>Like</title>
+                                        <path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z"></path>
+                                    </svg>
+                                </div>
+                                <div class="comments"
+                                     style="display: flex;color: white;justify-content: center; align-items: center;font-size: 15px;">
+                                    {{ reel.length_comment }}
+                                    <svg aria-label="Comment" class="x1lliihq x1n2onr6"
+                                         color="rgb(245, 245, 245)"
+                                         fill="rgb(245, 245, 245)" height="24" role="img"
+                                         viewBox="0 0 24 24"
+                                         width="24"><title>Comment</title>
+                                        <path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z"
+                                              fill="none"
+                                              stroke="currentColor" stroke-linejoin="round"
+                                              stroke-width="2"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <video style="background: transparent; width: 309px; object-fit: cover; height: 309px; position: absolute;left: 0;top: 0;"
+                                   src="{{ reel.reel }}"></video>
+                        </div>
+                    {% endfor %}
+
+
+                </div>
+                <div class="section_bottom_bottom_center">
+                    {% for reel in reels %}
+                        <div class="section_bottom_bottom_left_div hoverde" style="background: white">
+                            <div class="divchade2"
+                            >
+                                <div class="like"
+                                     style="display: flex;color: white;justify-content: center; align-items: center;font-size: 15px;margin-right: 20px;">
+                                    {{ reel.like }}
+                                    <svg aria-label="Like" class="x1lliihq x1n2onr6"
+                                         color="rgb(245, 245, 245)"
+                                         fill="rgb(245, 245, 245)" height="24" role="img"
+                                         viewBox="0 0 24 24"
+                                         width="24"><title>Like</title>
+                                        <path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z"></path>
+                                    </svg>
+                                </div>
+                                <div class="comments"
+                                     style="display: flex;color: white;justify-content: center; align-items: center;font-size: 15px;">
+                                    {{ reel.length_comment }}
+                                    <svg aria-label="Comment" class="x1lliihq x1n2onr6"
+                                         color="rgb(245, 245, 245)"
+                                         fill="rgb(245, 245, 245)" height="24" role="img"
+                                         viewBox="0 0 24 24"
+                                         width="24"><title>Comment</title>
+                                        <path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z"
+                                              fill="none"
+                                              stroke="currentColor" stroke-linejoin="round"
+                                              stroke-width="2"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <video style="background: transparent; width: 309px; object-fit: cover; height: 309px;"
+                                   src="{{ reel.reel }}"></video>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="section_bottom_bottom_right "
+                     style="display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap;">
+                    {% for reel in save %}
+                        <div class="section_bottom_bottom_right_div hoverde" style="background: white">
+                            <div class="divchade3"
+                            >
+                                <div class="like"
+                                     style="display: flex;color: white;justify-content: center; align-items: center;font-size: 15px;margin-right: 20px;">
+                                    {{ reel.like }}
+                                    <svg aria-label="Like" class="x1lliihq x1n2onr6"
+                                         color="rgb(245, 245, 245)"
+                                         fill="rgb(245, 245, 245)" height="24" role="img"
+                                         viewBox="0 0 24 24"
+                                         width="24"><title>Like</title>
+                                        <path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z"></path>
+                                    </svg>
+                                </div>
+                                <div class="comments"
+                                     style="display: flex;color: white;justify-content: center; align-items: center;font-size: 15px;">
+                                    {{ reel.length_comment }}
+                                    <svg aria-label="Comment" class="x1lliihq x1n2onr6"
+                                         color="rgb(245, 245, 245)"
+                                         fill="rgb(245, 245, 245)" height="24" role="img"
+                                         viewBox="0 0 24 24"
+                                         width="24"><title>Comment</title>
+                                        <path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z"
+                                              fill="none"
+                                              stroke="currentColor" stroke-linejoin="round"
+                                              stroke-width="2"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <video style="background: transparent; width: 309px; object-fit: cover; height: 309px;"
+                                   src="{{ reel.reel }}"></video>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/profile/script/script.js"></script>
+    <script src="../static/profile/script/1.js">
+    </script>
+    {% if user.username == username %}
+        <script>
+            let jjkjsk = document.querySelector('.section_top_right_top_buttons_button2')
+            jjkjsk.style.display = `none`
+            jjkjsk.classList.remove('section_top_right_top_buttons_button2')
+        </script>
+    {% endif %}
+
+{% endblock %}

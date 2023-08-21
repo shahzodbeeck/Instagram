@@ -1,0 +1,123 @@
+{% extends 'extends.html' %}
+{% block css %}
+    <link rel="stylesheet" href="../static/style/reg.min.css">
+    <style>
+        body {
+            background: white;
+        }
+
+        .div {
+            display: none;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <section class="section">
+        <div class="section_container">
+            <div class="section_container_elements">
+                <div class="section_container_elements_top">
+                    <div class="section_container_elements_top_right">
+                        <div class="section_container_elements_top_right_top">
+                            <div class="section_container_elements_top_right_top_top" data-visualcompletion="css-img"
+                                 aria-label="Instagram" class="" role="img"
+                                 style="background-image: url(https://static.cdninstagram.com/rsrc.php/v3/yx/r/WtxJZZ3-9ZP.png); background-position: 0px 0px; background-size: 176px 186px; width: 174px; height: 50px; background-repeat: no-repeat; display: inline-block;"></div>
+                            <h1 class="section_container_elements_top_right_top_top_h1">Sign up to see photos and videos
+                                from your friends.</h1>
+                            <div class="section_container_elements_top_right_top_center">
+                                <div class="section_container_elements_top_right_top_center_login">
+                                    <div class="section_container_elements_top_right_top_center_login_face">
+                                        <div class="section_container_elements_top_right_top_center_login_face_icon"></div>
+                                        <div class="section_container_elements_top_right_top_center_login_face_text">Log
+                                            in with Facebook
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section_container_elements_top_right_top_center_or">
+                                    <div class="section_container_elements_top_right_top_center_or_line">
+
+                                    </div>
+                                    <div class="section_container_elements_top_right_top_center_or_text">
+                                        Or
+                                    </div>
+                                    <div class="section_container_elements_top_right_top_center_or_line">
+
+                                    </div>
+                                </div>
+                                <form action="{{ url_for('reg') }}" class="section_container_elements_top_right_top_center_form" method="post">
+                                    <input class="section_container_elements_top_right_top_center_form_input"
+                                      name="gmail"     type="text" placeholder="Mobil number or gmail">
+                                    <input class="section_container_elements_top_right_top_center_form_input"
+                                           type="text" name="name" placeholder="Full name">
+                                    <input class="section_container_elements_top_right_top_center_form_input"
+                                           name="username" type="text" placeholder="Username">
+                                    <input class="section_container_elements_top_right_top_center_form_input"
+                                           name="password" type="text" placeholder="Password">
+
+                                    <p class="section_container_elements_top_right_top_center_form_p">People who use our
+                                        service may have uploaded your contact information to Instagram. <span
+                                                class="section_container_elements_top_right_top_center_form_p_span">Learn More</span>
+                                    </p>
+
+                                    <p class="section_container_elements_top_right_top_center_form_p">By signing up, you
+                                        agree to our <span
+                                                class="section_container_elements_top_right_top_center_form_p_span">Terms , Privacy Policy and Cookies Policy .</span>
+                                    </p>
+                                    <button class="section_container_elements_top_right_top_center_form_button">Sign up
+                                    </button>
+                                </form>
+
+
+                            </div>
+                            <div class="section_container_elements_top_right_top_bottom">
+
+                            </div>
+                        </div>
+
+                        <div class="section_container_elements_top_right_center">
+                            <div class="section_container_elements_top_right_center_h1">Have an account?
+                                <a href="{{ url_for('hello_world') }}" style="text-decoration: none" class="section_container_elements_top_right_center_h1_span">Login</a>
+                            </div>
+                        </div>
+                        <div class="section_container_elements_top_right_bottom">
+                            <div class="section_container_elements_top_right_bottom_top">
+                                <div class="section_container_elements_top_right_bottom_top_h1">Get the app</div>
+                            </div>
+                            <div class="section_container_elements_top_right_bottom_bottom">
+                                <img alt="Get it on Google Play"
+                                     class="section_container_elements_top_right_bottom_bottom_img"
+                                     src="https://static.cdninstagram.com/rsrc.php/v3/yz/r/c5Rp7Ym-Klz.png">
+                                <img alt="Get it on Google Play"
+                                     class="section_container_elements_top_right_bottom_bottom_img"
+                                     src="https://static.cdninstagram.com/rsrc.php/v3/yu/r/EHY6QnZYdNX.png">
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="section_container_elements_bottom">
+                    <ul class="section_container_elements_bottom_ul">
+                        <li class="section_container_elements_bottom_ul_li">Meta</li>
+                        <li class="section_container_elements_bottom_ul_li">
+                            About
+                        </li>
+                        <li class="section_container_elements_bottom_ul_li">Blog</li>
+                        <li class="section_container_elements_bottom_ul_li">Jobs</li>
+                        <li class="section_container_elements_bottom_ul_li">Help</li>
+                        <li class="section_container_elements_bottom_ul_li">API</li>
+                        <li class="section_container_elements_bottom_ul_li">Privacy</li>
+                        <li class="section_container_elements_bottom_ul_li">Terms</li>
+                        <li class="section_container_elements_bottom_ul_li">Top Accounts</li>
+                        <li class="section_container_elements_bottom_ul_li">Locations</li>
+                        <li class="section_container_elements_bottom_ul_li">Instagram Lite</li>
+                        <li class="section_container_elements_bottom_ul_li">Contact Uploading & Non-Users</li>
+                        <li class="section_container_elements_bottom_ul_li">Meta Verified</li>
+                        <li class="section_container_elements_bottom_ul_li">English</li>
+                        <li class="section_container_elements_bottom_ul_li">© 2023 Instagram from Meta</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

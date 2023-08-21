@@ -1,0 +1,382 @@
+.qora
+  position: absolute
+  width: 243px
+  left: -300px
+  top: 0
+  height: 100%
+  background: black
+  border-right: 0.3px solid rgb(38, 38, 38)
+  transition: 1.5s ease-in-out
+  opacity: 0
+  &_bottom
+    margin-left: 5px
+    margin-top: 10px
+    &_users
+      &_user
+        display: flex
+        &_icon
+          background: url("../icons/icon.jpg")
+          width: 45px
+          height: 45px
+          border-radius: 50%
+          background-size: cover
+        &_ism
+          font-size: 15px
+          color: white
+          margin-left: 5px
+          margin-top: 3px
+          font-weight: 500
+  &_top
+    width: 245px
+    height: 200px
+    display: flex
+    justify-content: space-around
+    align-items: flex-start
+    flex-direction: column
+    border-bottom: 0.5px solid #737373
+    &_h1
+      color: white
+      font-size: 20px
+    &_input
+      &_input
+        border: none
+        outline: none
+        background: #262626
+        color: #737373
+        width: 230px
+        height: 35px
+        border-radius: 7px
+
+.section
+  overflow: hidden
+  width: 83.89%
+  position: absolute
+  left: 245px
+  top: 0
+  background: black
+  &_top
+    position: relative
+    width: 100%
+    display: flex
+    &_left
+      position: absolute
+      left: -210px
+      height: 100%
+      width: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-direction: column
+      &_top
+        position: absolute
+        top: 0
+        overflow: hidden
+        height: 114px
+        width: 630px
+        display: flex
+        justify-content: center
+        align-items: center
+        //position: relative
+        &_button
+          position: absolute
+          right: 5px
+          cursor: pointer
+          display: flex
+          justify-content: center
+          align-items: center
+          border-radius: 50%
+          background: transparent
+          border: none
+          z-index: 1
+          &_div
+           height: 45px
+           width: 45px
+           background-image: url(../icons/ikons.png)
+           background-position: -294px -273px
+           transition: 1s
+        &_ul
+          transform: translateX(0)
+          width: 100vw
+          height: 100%
+          display: flex
+          max-width: 630px
+          list-style: none
+          align-items: center
+          position: relative
+          //justify-content: space-around
+          &_li
+            transition: 1s
+            max-width: 630px
+            &_div
+              border-radius: 50%
+              background: linear-gradient(to bottom, red,orange )
+              width: 70px
+              height: 70px
+              margin-left: 8px
+              display: flex
+              justify-content: center
+              align-items: center
+              &_div
+                width: 66px
+                height: 66px
+                background: black
+                border-radius: 50%
+                display: flex
+                justify-content: center
+                align-items: center
+                &_img
+                  width: 63.5px
+                  height: 63.5px
+                  border-radius: 50%
+                  background: url(../icons/icon.jpg)
+                  background-size: cover
+      &_video
+        position: absolute
+        top: 120px
+      &_bottom
+        width: 470px
+        height: 850px
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        &_top
+          height: 80px
+          width: 100%
+          display: flex
+          justify-content: space-around
+          align-items: center
+          position: relative
+          &_right
+            position: absolute
+            right: 0
+          &_left
+            position: absolute
+            left: 0
+            width: 80%
+            display: flex
+            justify-content: center
+            align-items: center
+            height: 100%
+            &_img
+              width: 50px
+              height: 50px
+              background: url("../icons/icon.jpg")
+              border-radius: 50%
+              background-size: cover
+            &_name
+              margin-left: 10px
+              box-sizing: border-box
+              flex-grow: 1
+              flex-shrink: 1
+              font: inherit
+              font-size: 20px
+              font-weight: 400
+              color: white
+              max-width: 100%
+              overflow: hidden
+              padding: 2px
+              position: relative
+              top: 1px
+              vertical-align: baseline
+
+        &_bottom
+          border: 0.05px solid #737373
+          height: 650px
+          width: 470px
+          &_video
+            width: 470px
+            height: 650px
+            &_video
+              width: 470px
+              height: 650px
+        &_like
+          height: 30px
+          width: 100%
+          position: relative
+          &_top
+            width: 100%
+            display: flex
+            justify-content: space-around
+            align-items: flex-start
+            align-self: flex-start
+            position: relative
+            &_ul
+              position: absolute
+              top: 5px
+              align-self: flex-start
+              list-style: none
+              width: 100px
+              display: flex
+              justify-content: space-around
+              align-items: center
+        &_comment
+          display: flex
+          flex-direction: column
+          justify-content: space-around
+          margin-top: 10px
+          width: 100%
+          border-bottom: #737373 0.5px solid
+          height: 100px
+          &_like
+            font-weight: 300
+            color: white
+            font-size: 17px
+            margin-left: 5px
+            margin-top: 3px
+          &_deck
+            margin-top: 3px
+            font-size: 17px
+            font-weight: 400
+            color: white
+            margin-left: 5px
+          &_comment
+            font-weight: 200
+            color: #737373
+            font-size: 15px
+            margin-left: 5px
+            margin-top: 3px
+          &_form
+            display: flex
+            &_input
+              border: none
+              outline: none
+              background: none
+              width: 400px
+              color: #737373
+              margin-left: 5px
+            &_button
+              border: none
+              background: none
+              color: #0095f6
+              font-weight: 540
+              font-size: 17px
+
+
+    &_right
+      position: absolute
+      left: 830px
+      width: 347px
+      height: 767.6px
+      &_center
+        &_followers
+          display: flex
+          justify-content: center
+          margin-top: 10px
+          align-items: flex-start
+          position: relative
+          width: 100%
+          height: 50px
+          &_icon
+            position: absolute
+            left: 0
+            align-self: flex-start
+            width: 40px
+            height: 40px
+            background: url("../icons/icon.jpg")
+            background-size: cover
+            border-radius: 50%
+          &_name
+            position: absolute
+            left: 50px
+            color: #fff
+            align-items: flex-start
+            justify-content: center
+            display: flex
+            font-weight: 300
+            font-size: 17px
+          &_follow
+            position: absolute
+
+            right: 5px
+            color: #0095f6
+            text-decoration: none
+            font-size: 17px
+            font-weight: 100
+
+      &_bottom
+        &_h1
+          color: #a8a8a8
+          font-size: 18px
+          font-weight: 450
+      &_top
+        width: 100%
+        height: 100px
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        &_icon
+          margin-top: 5px
+          width: 66px
+          height: 66px
+          background: url("../icons/icon.jpg")
+          border-radius: 50%
+          background-size: cover
+        &_name
+          color: white
+          margin-left: 5px
+          font-size: 17px
+          font-weight: 400
+          &_h1
+            color: white
+            font-size: 17px
+            font-weight: 400
+
+.madalni
+  width: 100vw
+  position: fixed
+  top: 0
+  left: 0
+  height: 100vh
+  z-index: 1
+  display: none
+  justify-content: center
+  align-items: center
+  background: rgba(255, 255, 255, 0.09)
+.mad
+  width: 790px
+  height: 700px
+  display: flex
+  background: black
+.mad1
+  width: 50%
+  height: 700px
+  border: #737373 0.1px solid
+.mad2
+  height: 100%
+  width: 50%
+.comment
+  width: 100%
+  height: 500px
+  border-bottom: 0.5px solid #737373
+.video
+  width: 100%
+  height: 700px
+.likes
+  border-bottom: 0.5px solid #737373
+  height: 80px
+  display: flex
+  justify-content: space-around
+  align-items: flex-start
+  flex-direction: column
+.form
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 40px
+  position: absolute
+.input
+  margin-left: 20px
+  width: 340px
+  background: none
+  outline: none
+  border: none
+  color: #737373
+  font-size: 15px
+.button
+  background: none
+  border: none
+  color: #0095f6
+  font-size: 17px
+  position: absolute
+  right: 10px

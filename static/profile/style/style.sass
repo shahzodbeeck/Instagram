@@ -1,0 +1,448 @@
+.section
+  width: 83.89%
+  position: absolute
+  left: 245px
+  background: black
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+
+  &_top
+    &_left
+      &_top
+        position: absolute
+        top: 0
+        overflow: hidden
+        height: 114px
+        width: 630px
+        display: flex
+        justify-content: center
+        align-items: center
+        //position: relative
+        &_button
+          position: absolute
+          right: 5px
+          cursor: pointer
+          display: flex
+          justify-content: center
+          align-items: center
+          border-radius: 50%
+          background: transparent
+          border: none
+          z-index: 1
+
+          &_div
+            height: 45px
+            width: 45px
+            background-image: url(../icons/ikons.png)
+            background-position: -294px -273px
+            transition: 1s
+
+        &_ul
+          transform: translateX(0)
+          width: 100vw
+          height: 100%
+          display: flex
+          max-width: 630px
+          list-style: none
+          align-items: center
+          position: relative
+          //justify-content: space-around
+          &_li
+            transition: 1s
+            max-width: 630px
+
+            &_div
+              border-radius: 50%
+              background: linear-gradient(to bottom, red, orange)
+              width: 70px
+              height: 70px
+              margin-left: 8px
+              display: flex
+              justify-content: center
+              align-items: center
+
+              &_div
+                width: 66px
+                height: 66px
+                background: black
+                border-radius: 50%
+                display: flex
+                justify-content: center
+                align-items: center
+
+                &_img
+                  width: 63.5px
+                  height: 63.5px
+                  border-radius: 50%
+                  background: url(../icons/icon.jpg)
+                  background-size: cover
+
+      &_video
+        position: absolute
+        top: 120px
+
+      &_bottom
+        width: 470px
+        height: 850px
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        &_top
+          height: 80px
+          width: 100%
+          display: flex
+          justify-content: space-around
+          align-items: center
+          position: relative
+
+          &_right
+            position: absolute
+            right: 0
+
+          &_left
+            position: absolute
+            left: 0
+            width: 80%
+            display: flex
+            justify-content: center
+            align-items: center
+            height: 100%
+
+            &_img
+              width: 50px
+              height: 50px
+              background: url("../icons/icon.jpg")
+              border-radius: 50%
+              background-size: cover
+
+            &_name
+              margin-left: 10px
+              box-sizing: border-box
+              flex-grow: 1
+              flex-shrink: 1
+              font: inherit
+              font-size: 20px
+              font-weight: 400
+              color: white
+              max-width: 100%
+              overflow: hidden
+              padding: 2px
+              position: relative
+              top: 1px
+              vertical-align: baseline
+
+        &_bottom
+          border: 0.05px solid #737373
+          height: 650px
+          width: 470px
+
+          &_video
+            width: 470px
+            height: 650px
+
+            &_video
+              width: 470px
+              height: 650px
+
+        &_like
+          height: 30px
+          width: 100%
+          position: relative
+
+          &_top
+            width: 100%
+            display: flex
+            justify-content: space-around
+            align-items: flex-start
+            align-self: flex-start
+            position: relative
+
+            &_ul
+              position: absolute
+              top: 5px
+              align-self: flex-start
+              list-style: none
+              width: 100px
+              display: flex
+              justify-content: space-around
+              align-items: center
+
+  &_bottom
+    width: 935px
+    border-top: 0.5px solid #a8a8a8
+    flex-shrink: 1
+    overflow: hidden
+    margin-top: 30px
+
+    &_top
+      height: 30px
+      width: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+
+      &_ul
+        width: 50%
+        align-items: center
+        justify-content: space-around
+        display: flex
+        list-style: none
+
+        &_li
+          cursor: pointer
+          color: white
+          font-size: 19px
+
+    &_bottom
+      transition: transform 0.1s ease-in-out
+      display: flex
+      transform: translateX(0)
+      width: 2805px
+      flex-shrink: 1
+
+      &_left
+        flex-shrink: 1
+        width: 935px
+        display: flex
+        flex-wrap: wrap
+
+        &_div
+          margin-left: 2px
+          margin-top: 3px
+          width: 309px
+          height: 309px
+          background: #0095f6
+
+      &_right
+        flex-shrink: 1
+        width: 935px
+        height: 100%
+
+        &_div
+          margin-left: 2px
+          margin-top: 3px
+          width: 309px
+          height: 309px
+          background: #0095f6
+
+      &_center
+        flex-shrink: 1
+        width: 935px
+        display: flex
+        flex-wrap: wrap
+
+        &_div
+          margin-left: 2px
+          margin-top: 3px
+          width: 309px
+          height: 309px
+          background: #0095f6
+
+  &_top
+    margin-top: 30px
+    width: 935px
+    height: 275px
+    display: flex
+
+    &_left
+      width: 291.66px
+      height: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+
+      &_icon
+        width: 150px
+        height: 150px
+        border-radius: 50%
+        background: url("../icons/icon.jpg")
+        background-size: cover
+
+    &_right
+      width: 653.74px
+      height: 100%
+
+      &_top
+        width: 100%
+        height: 50px
+        display: flex
+        justify-content: space-around
+        align-items: center
+        color: white
+        font-weight: 480
+        font-size: 20px
+
+        &_nik
+          align-self: center
+          justify-content: flex-start
+          color: white
+          font-size: 21px
+          font-weight: 495
+
+        &_buttons
+          width: 380px
+          display: flex
+          justify-content: space-around
+          align-content: center
+
+          &_button
+            display: flex
+            justify-content: center
+            align-items: center
+            border: none
+            border-radius: 6px
+            background: white
+            color: black
+            width: 117.93px
+            height: 32px
+            font-weight: 480
+            font-size: 17px
+
+      &_center
+        width: 100%
+        height: 34px
+        display: flex
+        justify-content: space-around
+        align-items: center
+
+        &_posts
+          display: flex
+          width: 86.43px
+          align-items: center
+          justify-content: space-around
+          font-size: 20px
+          color: white
+
+        &_followers
+          display: flex
+          width: 128.86px
+          align-items: center
+          justify-content: space-around
+          font-size: 20px
+          color: white
+
+        &_following
+          display: flex
+          width: 100px
+          align-items: center
+          justify-content: space-around
+          font-size: 20px
+          color: white
+
+        &_span
+          color: #ffffff
+          font-size: 18px
+          font-weight: 640
+
+      &_bottom
+        width: 100%
+        height: 155px
+
+        &_name
+          color: white
+          font-size: 18px
+          font-weight: 480
+
+        &_type
+          color: #a8a8a8
+
+        &_bio
+          font-size: 17px
+          color: #fff
+          flex-wrap: wrap
+          display: flex
+
+        &_link
+          font-size: 17px
+          color: white
+          font-weight: 600
+
+//madalni
+.madalni
+  width: 100vw
+  position: fixed
+  top: 0
+  left: 0
+  height: 100vh
+  z-index: 1
+  display: none
+  justify-content: center
+  align-items: center
+  background: rgba(255, 255, 255, 0.09)
+
+.mad
+  position: relative
+  width: 790px
+  height: 700px
+  display: flex
+  background: black
+
+.buttons
+  width: 40px
+  height: 40px
+  position: absolute
+
+.madd
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  transition: 5s ease-in-out
+  display: none
+
+.mad1
+  width: 50%
+  height: 700px
+  border: #737373 0.1px solid
+
+.mad2
+  height: 100%
+  width: 50%
+
+.comment
+  width: 100%
+  height: 500px
+  border-bottom: 0.5px solid #737373
+
+.video
+  width: 100%
+  height: 700px
+
+.likes
+  border-bottom: 0.5px solid #737373
+  height: 80px
+  display: flex
+  justify-content: space-around
+  align-items: flex-start
+  flex-direction: column
+
+.form
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 40px
+  position: absolute
+
+.input
+  margin-left: 20px
+  width: 340px
+  background: none
+  outline: none
+  border: none
+  color: #737373
+  font-size: 15px
+
+.button
+  background: none
+  border: none
+  color: #0095f6
+  font-size: 17px
+  position: absolute
+  right: 10px
+
+.current
+  display: flex

@@ -1,0 +1,135 @@
+{% extends 'extends.html' %}
+{% block css %}
+    <link rel="stylesheet" href="../static/style/login.min.css">
+    <style>
+    body{
+        background: white;
+    }
+    .div{
+        display: none;
+    }
+    </style>
+{% endblock %}
+{% block content %}
+    <section class="section">
+        <div class="section_container">
+            <div class="section_container_elements">
+                <div class="section_container_elements_top">
+                    <div class="section_container_elements_top_left">
+                        <div class="section_container_elements_top_left_phone">
+                            <img src="../static/icons/screenshot1.png"
+                                 class="section_container_elements_top_left_phone_img">
+                            <img src="../static/icons/screenshot2.png"
+                                 class="section_container_elements_top_left_phone_img">
+                            <img src="../static/icons/screenshot3.png"
+                                 class="section_container_elements_top_left_phone_img">
+                            <img src="../static/icons/screenshot4.png"
+                                 class="section_container_elements_top_left_phone_img">
+                        </div>
+                    </div>
+                    <div class="section_container_elements_top_right">
+                        <div class="section_container_elements_top_right_top">
+                            <div class="section_container_elements_top_right_top_top" data-visualcompletion="css-img"
+                                 aria-label="Instagram" class="" role="img"
+                                 style="background-image: url(https://static.cdninstagram.com/rsrc.php/v3/yx/r/WtxJZZ3-9ZP.png); background-position: 0px 0px; background-size: 176px 186px; width: 174px; height: 50px; background-repeat: no-repeat; display: inline-block;"></div>
+                            <div class="section_container_elements_top_right_top_center">
+                                <form action="{{ url_for('hello_world') }}" method="post" class="section_container_elements_top_right_top_center_form">
+                                    <input class="section_container_elements_top_right_top_center_form_input"
+                                         name="username"  type="text" placeholder="Phone number,username or email">
+                                    <input class="section_container_elements_top_right_top_center_form_input"
+                                         name="password"  type="text" placeholder="Password">
+                                    <button class="section_container_elements_top_right_top_center_form_button">Login
+                                    </button>
+                                </form>
+                                <div class="section_container_elements_top_right_top_center_or">
+                                    <div class="section_container_elements_top_right_top_center_or_line">
+
+                                    </div>
+                                    <div class="section_container_elements_top_right_top_center_or_text">
+                                        Or
+                                    </div>
+                                    <div class="section_container_elements_top_right_top_center_or_line">
+
+                                    </div>
+                                </div>
+                                <div class="section_container_elements_top_right_top_center_login">
+                                    <div class="section_container_elements_top_right_top_center_login_face">
+                                        <div class="section_container_elements_top_right_top_center_login_face_icon"></div>
+                                        <div class="section_container_elements_top_right_top_center_login_face_text">Log
+                                            in with Facebook
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section_container_elements_top_right_top_center_forgot">
+                                    <div class="section_container_elements_top_right_top_center_forgot_h1">
+                                        Forgot Password?
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section_container_elements_top_right_top_bottom">
+
+                            </div>
+                        </div>
+
+                        <div class="section_container_elements_top_right_center">
+                            <div class="section_container_elements_top_right_center_h1">Don't have an account?
+                                <a style="text-decoration: none" href="{{ url_for('reg') }}" class="section_container_elements_top_right_center_h1_span">Sign up</a>
+                            </div>
+                        </div>
+                        <div class="section_container_elements_top_right_bottom">
+                            <div class="section_container_elements_top_right_bottom_top">
+                                <div class="section_container_elements_top_right_bottom_top_h1">Get the app</div>
+                            </div>
+                            <div class="section_container_elements_top_right_bottom_bottom">
+                                <img alt="Get it on Google Play"
+                                     class="section_container_elements_top_right_bottom_bottom_img"
+                                     src="https://static.cdninstagram.com/rsrc.php/v3/yz/r/c5Rp7Ym-Klz.png">
+                                <img alt="Get it on Google Play"
+                                     class="section_container_elements_top_right_bottom_bottom_img"
+                                     src="https://static.cdninstagram.com/rsrc.php/v3/yu/r/EHY6QnZYdNX.png">
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="section_container_elements_bottom">
+                    <ul class="section_container_elements_bottom_ul">
+                        <li class="section_container_elements_bottom_ul_li">Meta</li>
+                        <li class="section_container_elements_bottom_ul_li">
+                            About
+                        </li>
+                        <li class="section_container_elements_bottom_ul_li">Blog</li>
+                        <li class="section_container_elements_bottom_ul_li">Jobs</li>
+                        <li class="section_container_elements_bottom_ul_li">Help</li>
+                        <li class="section_container_elements_bottom_ul_li">API</li>
+                        <li class="section_container_elements_bottom_ul_li">Privacy</li>
+                        <li class="section_container_elements_bottom_ul_li">Terms</li>
+                        <li class="section_container_elements_bottom_ul_li">Top Accounts</li>
+                        <li class="section_container_elements_bottom_ul_li">Locations</li>
+                        <li class="section_container_elements_bottom_ul_li">Instagram Lite</li>
+                        <li class="section_container_elements_bottom_ul_li">Contact Uploading & Non-Users</li>
+                        <li class="section_container_elements_bottom_ul_li">Meta Verified</li>
+                        <li class="section_container_elements_bottom_ul_li">English</li>
+                        <li class="section_container_elements_bottom_ul_li">© 2023 Instagram from Meta</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+
+        rasmcha = document.querySelectorAll(".section_container_elements_top_left_phone_img");
+        rasmcha[0].style.opacity = `1`;
+        let counter = 1,
+            printMessage = function () {
+                if (counter >= 3) {
+                    counter = 0
+                } else {
+                    rasmcha[counter].style.opacity = `1`
+                    counter++
+                }
+            }
+        let intervalId = setInterval(printMessage, 3000);
+    </script>
+{% endblock %}
